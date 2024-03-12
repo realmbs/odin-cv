@@ -1,6 +1,15 @@
 import '../styles/Navbar.css'
+import Button from './Button';
+import { useState } from 'react';
 
 function Navbar() {
+
+  const [active, setActive] = useState(0);
+
+  const handleButtonClick = (id: number) => {
+    setActive(id);
+  }
+
   return (
     <>
       <div id="nav">
@@ -8,9 +17,9 @@ function Navbar() {
           <h3>Create CV</h3>
         </div>
         <div className="container">
-          <button className="btn">Personal Info</button>
-          <button className="btn">Education</button>
-          <button className="btn">Experience</button>
+          <Button id={1} text="Personal Info" onClick={handleButtonClick} />
+          <Button id={2} text="Education" onClick={handleButtonClick} />
+          <Button id={3} text="Experience" onClick={handleButtonClick} />
         </div>
 
       </div>
